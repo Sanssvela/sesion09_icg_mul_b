@@ -1,0 +1,31 @@
+<canvas id='tablero' width=900 height=900>
+<script>
+
+
+function figura(cd,colorBorde,colorRelleno,grosor){
+   
+  ctx.strokeStyle = colorBorde;
+  ctx.fillStyle = colorRelleno;
+  ctx.lineWidtth = grosor;
+
+  ctx.beginPath();
+  ctx.moveTo(cd[0],cd[1]);
+for (var i=2; i < cd.length; i+=2)
+  ctx.lineTo(cd[i],cd[i+1]);
+  ctx.closePath();
+  ctx.stroke();
+  ctx.fill();
+  
+ }
+
+function recorte(arr){
+
+ctx.beginPath();
+  ctx.moveTo(arr[0],arr[1]);
+  for (var i=2; i < arr.length; i+=2)
+  ctx.lineTo(arr[i],arr[i+1]);
+
+  ctx.clip()
+}
+  var canvas = document.getElementById('tablero');
+  var ctx = canvas.getContext('2d');

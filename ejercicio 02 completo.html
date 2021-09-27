@@ -1,0 +1,40 @@
+<canvas id='tablero' width=900 height=900>
+<script>
+
+
+function figura(cd,colorBorde,colorRelleno,grosor){
+   
+  ctx.strokeStyle = colorBorde;
+  ctx.fillStyle = colorRelleno;
+  ctx.lineWidtth = grosor;
+
+  ctx.beginPath();
+  ctx.moveTo(cd[0],cd[1]);
+for (var i=2; i < cd.length; i+=2)
+  ctx.lineTo(cd[i],cd[i+1]);
+  ctx.closePath();
+  ctx.stroke();
+  ctx.fill();
+  
+ }
+
+function recorte(arr){
+
+ctx.beginPath();
+  ctx.moveTo(arr[0],arr[1]);
+  for (var i=2; i < arr.length; i+=2)
+  ctx.lineTo(arr[i],arr[i+1]);
+
+  ctx.clip()
+}
+  var canvas = document.getElementById('tablero');
+  var ctx = canvas.getContext('2d');
+
+ var [azul, verde, rojo, blanco] = ['rgba(0,162,232)', 'rgba(181,230,29)', 'rgba(237,28,36)', 'rgba(255,255,255)'];
+var penta = [345,4,539,143,466,368,244,368,149,144], penta2=[302,68,424,156,380,303,277,303,180,156],barra =[12,142,6,189,542,288,547,239,], circ [45,45,45,45]
+
+
+
+figura(penta,'gray')')//rombo verde
+
+</script>
